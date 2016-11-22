@@ -13,13 +13,13 @@
 # limitations under the License.
 
 # The following lines are from the postgresql90 spec file, postgresql-9.0.spec
-%define shortversion 93
-%define majorversion 9.3
+%define shortversion 95
+%define majorversion 9.5
 %define	pgbaseinstdir	/usr/pgsql-%{majorversion}
 
 Summary: Aggregate Knowledge HyperLogLog PostgreSQL extension.
 Name: postgresql%{shortversion}-hll
-Version: 2.10.0
+Version: 2.10.1
 Release: 0
 License: Apache License, Version 2.0
 URL: https://github.com/aggregateknowledge/postgresql-hll
@@ -48,7 +48,7 @@ mkdir -p $RPM_BUILD_ROOT
 
 mkdir -p $RPM_BUILD_ROOT%{pgbaseinstdir}/share/extension
 install -m644 hll.control $RPM_BUILD_ROOT%{pgbaseinstdir}/share/extension
-install -m644 hll--2.10.0.sql $RPM_BUILD_ROOT%{pgbaseinstdir}/share/extension
+install -m644 hll--2.10.1.sql $RPM_BUILD_ROOT%{pgbaseinstdir}/share/extension
 
 mkdir -p $RPM_BUILD_ROOT%{pgbaseinstdir}/lib
 install -m755 hll.so $RPM_BUILD_ROOT%{pgbaseinstdir}/lib
@@ -62,11 +62,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{pgbaseinstdir}/share/extension
 %{pgbaseinstdir}/share/extension/hll.control
-%{pgbaseinstdir}/share/extension/hll--2.10.0.sql
+%{pgbaseinstdir}/share/extension/hll--2.10.1.sql
 
 %{pgbaseinstdir}/lib/hll.so
 
 %changelog
+* Mon Nov 21 2016 Jarred Nicholls <jarred.nicholls@ironnetcybersecurity.com> - 2.10.1-0
+- added SSPACE to the aggregate functions for better query planning
 * Fri Jan 10 2014 Timon Karnezos <timon.karnezos@gmail.com> - 2.10.0-0
 - added binary IO type for hll
 * Mon Dec 16 2013 Timon Karnezos <timon.karnezos@gmail.com> - 2.9.0-0

@@ -20,7 +20,7 @@ OBJS =		\
 
 EXTENSION = hll
 DATA =		\
-			hll--2.10.0.sql \
+			hll--2.10.1.sql \
 			$(NULL)
 
 EXTRA_CLEAN += -r $(RPM_BUILD_ROOT)
@@ -42,4 +42,3 @@ endif
 
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
-
