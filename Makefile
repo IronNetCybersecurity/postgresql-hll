@@ -20,7 +20,7 @@ OBJS =		\
 
 EXTENSION = hll
 DATA =		\
-			hll--2.10.1.sql \
+			hll--2.10.2.sql \
 			$(NULL)
 
 EXTRA_CLEAN += -r $(RPM_BUILD_ROOT)
