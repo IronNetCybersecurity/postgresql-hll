@@ -13,8 +13,8 @@
 # limitations under the License.
 
 # The following lines are from the postgresql90 spec file, postgresql-9.0.spec
-%define shortversion 96
-%define majorversion 9.6
+%define shortversion 10
+%define majorversion 10
 %define	pgbaseinstdir	/usr/pgsql-%{majorversion}
 
 Summary: Aggregate Knowledge HyperLogLog PostgreSQL extension.
