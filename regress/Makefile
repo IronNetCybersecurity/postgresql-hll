@@ -53,7 +53,9 @@ clean:
 	else \
 	  PGOPTIONS=$(PGOPTIONS) $(PSQL) $(PSQLOPTS) $(TEST_DB) -f $*.sql > $*.out 2>&1; \
 	fi
+
 	@diff -u -I "^COPY.*" $*.ref $*.out >> $*.diff || status=1
+
 	@if test -s $*.diff; then \
 		echo " .. FAIL"; \
 	else \
