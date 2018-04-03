@@ -7,6 +7,8 @@ This Postgres module introduces a new data type `hll` which is a [HyperLogLog](h
 
 In addition to the algorithm proposed in the [original paper](http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf), this implementation is augmented to improve its accuracy and memory use without sacrificing much speed. See below for more details.
 
+This `postgresql-hll` extension was originally developed by the Science team from Aggregate Knowledge, now a part of [Neustar](https://research.neustar.biz). Please see the [acknowledgements](#acknowledgements) section below for details about its contributors. 
+
 Algorithms
 ----------
 
@@ -361,7 +363,7 @@ Compatibility
 
 This module has been tested on:
 
-* **Postgres 9.0, 9.1, 9.2, 9.3**
+* **Postgres 9.0, 9.1, 9.2, 9.3, 9.4**
 
 If you end up needing to change something to get this running on another system, send us the diff and we'll try to work it in!
 
@@ -492,3 +494,8 @@ It is a pretty trivial task to export these to and from Postgres and other appli
 
 * [java-hll](https://github.com/aggregateknowledge/java-hll)
 * [js-hll](https://github.com/aggregateknowledge/js-hll)
+
+Acknowledgements
+================
+
+Original developers of `postgresql-hll` are [Ken Sedgwick](https://github.com/ksedgwic), Timon Karnezos, and [Rob Grzywinski](https://github.com/rgrzywinski).
